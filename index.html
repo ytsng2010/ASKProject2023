@@ -13,34 +13,46 @@
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
     }
-    function changeLanguage(languageCode) {
-    Array.from(document.getElementsByClassName('lang')).forEach(function (elem) {
-        if (elem.classList.contains('lang-' + languageCode)) {
-             elem.style.display = 'initial';
-        }
-        else {
-             elem.style.display = 'none';
-        }
-    });
-}
-
-// select handler
-const selector = document.getElementById('langSelector');
-selector.addEventListener('change', function (evt) {
-    changeLanguage(this.value);
-});
-
-// detect initial browser language
-const lang = navigator.userLanguage || navigator.language || 'en-EN';
-const startLang = Array.from(selector.options).map(opt => opt.value).find(val => lang.includes(val)) || 'en';
-changeLanguage(startLang);
-
-// updating select with start value
-selector.selectedIndex = Array.from(selector.options).map(opt => opt.value).indexOf(startLang)
-
-// fill "The selected language is:"
-document.getElementById('browserLang').innerText = lang;
-document.getElementById('startLang').innerText = startLang;
+   // Create a function to change 
+    // the hash value of the page 
+    function changeLanguage(lang) { 
+      location.hash = lang; 
+      location.reload(); 
+    } 
+  
+    // Define the language reload anchors 
+    var language = { 
+      eng: { 
+        welcome: "Welcome to the GeeksforGeeks " + 
+        "Portal! You can choose any language " +  
+        "using the buttons above!" 
+      }, 
+      es: { 
+        welcome: "¡Bienvenido al portal GeeksforGeeks! " + 
+        "¡Puedes elegir cualquier idioma usando " + 
+        "los botones de arriba!" 
+      }, 
+      hin: { 
+        welcome: "GeeksforGeeks पोर्टल पर आपका स्वागत है! " + 
+        "आप ऊपर दिए गए बटन का उपयोग करके किसी भी " +  
+        "भाषा को चुन सकते हैं!" 
+      } 
+    }; 
+  
+    // Check if a hash value exists in the URL 
+    if (window.location.hash) { 
+  
+      // Set the content of the webpage  
+      // depending on the hash value 
+      if (window.location.hash == "#es") { 
+        siteContent.textContent = 
+          language.es.welcome; 
+      } 
+      else if (window.location.hash == "#hin") { 
+        siteContent.textContent = 
+          language.hin.welcome; 
+      } 
+    }
   </script>
 <style>
  .sidenav {
@@ -149,23 +161,30 @@ document.getElementById('startLang').innerText = startLang;
     Malaysia bersama-sama dalam laman ini.
    </p> 
   </div>
- <div>
-  <p class="lang lang-en">My english text</p>
-  <p class="lang lang-de">Mein deutscher Text</p>
-  <p class="lang lang-it">Il mio testo</p>
-  <p class="lang lang-es">El mi texto</p>
-  <p class="lang lang-zh">我的文字</p>
-</div>
-<select id="langSelector">
-    <option value="en">English</option>
-    <option value="it">Italian</option>
-    <option value="es">Espanol</option>
-    <option value="de">Dutch</option>
-    <option value="zh">Chinese</option>
-</select>
-<div>
-<p>Your browser language is: <b id="browserLang"></b></p>
-<p>The selected language is: <b id="startLang"></b></p> 
-</div>
+   <p> 
+    Click on the buttons below to change 
+    the language of the webpage. 
+  </p> 
+  
+  <!-- Define the buttons that will  
+  change the language of the page  
+  and reload it -->
+  <button onclick="changeLanguage('eng')"> 
+    Change to English< 
+    /button> 
+  <button onclick="changeLanguage('es')"> 
+    Change to Spanish 
+  </button> 
+  <button onclick="changeLanguage('hin')"> 
+    Change to Hindi 
+  </button> 
+  
+  <!-- Define the content of the page 
+  that would be changed -->
+  <p id="siteContent"> 
+    Welcome to the GeeksforGeeks Portal!  
+    You can choose any language using the 
+    buttons above! 
+  </p> 
 </body>
 </html>
