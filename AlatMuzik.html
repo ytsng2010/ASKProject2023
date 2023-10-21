@@ -3,33 +3,18 @@
 <head>
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alat Muzik di Malaysia</title>
+<title>Alat Muzik</title>
+<script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
 <style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
-
-.sidenav {
+ .sidenav {
   height: 100%;
   width: 0;
   position: fixed;
@@ -62,31 +47,63 @@ li a:hover {
   font-size: 36px;
   margin-left: 50px;
 }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+    body {
+      margin: 0;
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover {
+      background: #ddd;
+      color: black;
+    }
+
+    .main {
+      padding-top: 50px;
+      margin-top: 30px;
+      height: 1500px;
+    }
 </style>
 </head>
 <body>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Bangunan</a>
-  <a href="#">Pakaian</a>
-  <a href="#">Tarian</a>
-  <a href="AlatMuzik.html">Alat Muzik</a>
-  <a href="#">Makanan</a>
-</div>
-<ul>
-  <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></li>
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-       }
-
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-       }
-</script>
-  <li><a href="#home">Laman Utama</a></li>
-  <li><a href="#about">Pengenalan Ahli Projek</a></li>
-</ul>
-<h1>Alat Muzik di Malaysia</h1>
+<div id="mySidenav" class="sidenav" style="text-align:center;">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <h2 style="color:red;">Seni Budaya Malaysia</h2>
+    <a href="index.html"><h4>Laman Utama</h4></a>
+    <a href="bangunan.html">Bangunan</a>
+    <a href="pakaian.html">Pakaian</a>
+    <a href="AlatMuzik.html">Alat Muzik</a>
+    <a href="makanan.html">Makanan</a>
+    <a href="tarian.html">Tarian</a>
+  </div>
+  <div class="navbar">
+    <span style="font-size:35px;cursor:pointer;background-color:grey;float:left;" onclick="openNav()">&#9776;</span>
+    <a href="">Ruang Imej</a>
+    <a href="">Pengenalan Ahli Projek</a>
+  </div>
+  <div class="index">
+   <h2>Alat Muzik di Malaysia</h2>
+  </div>
 </body>
 </html>
