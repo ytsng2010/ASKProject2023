@@ -13,7 +13,7 @@
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
     }
-   // Create a function to change 
+       // Create a function to change 
     // the hash value of the page 
     function changeLanguage(lang) { 
       location.hash = lang; 
@@ -45,12 +45,14 @@
       // Set the content of the webpage  
       // depending on the hash value 
       if (window.location.hash == "#es") { 
-        siteContent.textContent = language.es.welcome; 
+        siteContent.textContent = 
+          language.es.welcome; 
       } 
       else if (window.location.hash == "#hin") { 
-        siteContent.textContent = language.hin.welcome; 
+        siteContent.textContent = 
+          language.hin.welcome; 
       } 
-    }
+    } 
   </script>
 <style>
  .sidenav {
@@ -162,7 +164,11 @@
 
    </p> 
   </div>
-   <p> 
+  <h1 style="color: green"> 
+    GeeksforGeeks 
+  </h1> 
+    
+  <p> 
     Click on the buttons below to change 
     the language of the webpage. 
   </p> 
@@ -172,7 +178,7 @@
   and reload it -->
   <button onclick="changeLanguage('eng')"> 
     Change to English< 
-    </button> 
+    /button> 
   <button onclick="changeLanguage('es')"> 
     Change to Spanish 
   </button> 
