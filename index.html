@@ -87,6 +87,52 @@
 <body>
 <div id="mySidenav" class="sidenav" style="text-align:center;">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+ function changeLanguage(languageCode) {
+    Array.from(document.getElementsByClassName('lang')).forEach(function (elem) {
+        if (elem.classList.contains('lang-' + languageCode)) {
+             elem.style.display = 'initial';
+        }
+        else {
+             elem.style.display = 'none';
+        }
+    });
+}
+
+// select handler
+const selector = document.getElementById('langSelector');
+selector.addEventListener('change', function (evt) {
+    changeLanguage(this.value);
+});
+
+// detect initial browser language
+const lang = navigator.userLanguage || navigator.language || 'en-EN';
+const startLang = Array.from(selector.options).map(opt => opt.value).find(val => lang.includes(val)) || 'en';
+changeLanguage(startLang);
+
+// updating select with start value
+selector.selectedIndex = Array.from(selector.options).map(opt => opt.value).indexOf(startLang)
+
+// fill "The selected language is:"
+document.getElementById('browserLang').innerText = lang;
+document.getElementById('startLang').innerText = startLang;
+<div>
+  <p class="lang lang-en">My english text</p>
+  <p class="lang lang-de">Mein deutscher Text</p>
+  <p class="lang lang-it">Il mio testo</p>
+  <p class="lang lang-es">El mi texto</p>
+  <p class="lang lang-zh">我的文字</p>
+</div>
+<select id="langSelector">
+    <option value="en">English</option>
+    <option value="it">Italian</option>
+    <option value="es">Espanol</option>
+    <option value="de">Dutch</option>
+    <option value="zh">Chinese</option>
+</select>
+<div>
+<p>Your browser language is: <b id="browserLang"></b></p>
+<p>The selected language is: <b id="startLang"></b></p> 
+</div>
     <a><h3 style="color:red;">Seni Budaya Malaysia</h3></a>
     <a href="index.html"><h3>Laman Utama</h3></a>
     <a href="Permainan.html">Permainan</a>
