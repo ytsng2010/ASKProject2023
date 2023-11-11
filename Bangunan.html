@@ -92,12 +92,12 @@
    .container {
     margin-top: 20px;
     padding: 10px;
-    background-color: #f0f0f0;
+    background-color: linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
     border: 1px solid #ccc;
   }
 </style>
 </head>
-<body>
+<body>  
  <li class="interlanguage-link interwiki-en mw-list-item"><a href="English Index.html" title="Culture of Malaysia – Inggeris" lang="en" hreflang="en" class="interlanguage-link-target"><span>English</span></a></li>
 <div id="mySidenav" class="sidenav" style="text-align:center;">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -118,15 +118,18 @@
    <marquee style="background-color:white;font-size:25px;" scrolldelay=35 truespeed="truespeed">WELCOME TO LEARN ABOUT MALAYSIA'S ARTS AND CULTURES!</marquee>
    <h2 style="color: #8b008b;text-align:center;">Malaysia's Buildings</h2>
   </div>
- <div class="container mt-3">
-  <span class="badge rounded-pill bg-primary">Primary</span>
-  <span class="badge rounded-pill bg-secondary">Secondary</span>
-  <span class="badge rounded-pill bg-success">Success</span>
-  <span class="badge rounded-pill bg-danger">Danger</span>
-  <span class="badge rounded-pill bg-warning">Warning</span>
-  <span class="badge rounded-pill bg-info">Info</span>
-  <span class="badge rounded-pill bg-light">Light</span>
-  <span class="badge rounded-pill bg-dark">Dark</span>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card custom-rounded-card">
+          <img src="your-image.jpg" class="card-img-top" alt="Image">
+          <div class="card-body">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">This is a custom rounded card.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
