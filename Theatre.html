@@ -194,4 +194,32 @@ the Malays as well. </li>
      </div>
    </div>
 </div>
+     <body>
+<div style="height: 50px;">
+</div>
+
+<!-- Button to scroll to top -->
+<button id="scrollToTopBtn" onclick="scrollToTop()">^Tatal ke atas</button>
+
+<script>
+    // Show the button when the user scrolls down 300px
+    window.onscroll = function () {
+        showScrollButton();
+    };
+
+    function showScrollButton() {
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    }
+
+    // Scroll to the top when the button is clicked
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
 </html>
