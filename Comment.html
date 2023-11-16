@@ -122,55 +122,41 @@ height: 40px;
     </a>
   </div>
   
-<style>
-.error {color: #FF0000;}
-</style>
-</head>
-<body>  
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <style>
-        /* Optional: Add some styling to the animated element and form */
-        .formbox {
-            max-width: 400px;
-            margin: auto;
-        }
+  <div id="root"></div>
 
-        /* Optional: Style the success message */
-        #success-message {
-            color: green;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
+  <!-- React and ReactDOM libraries -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  
+  <!-- Babel compiler (for JSX) -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+import { useState } from "react";
+import ReactDOM from 'react-dom/client';
 
-<h1 id="formtitle" class="animate__animated animate__jackInTheBox">Feedback Email</h1>
-<div class="formbox">
-    <form id="email-form" action="pictures/process_form.php" method="post">
-        <input type="hidden" name="contact_number">
-        <label>Name:</label>
-        <input type="text" name="user_name" placeholder="Your name" required><br>
-       <label>Email:</label>
-        <input type="email" name="user_email" placeholder="Your email" required><br>
-        <label>Comment:</label><br>
-        <textarea name="message" placeholder="Write your comment" required></textarea><br><br>
-        <input type="submit" value="Send" id="send">
+function MyForm() {
+  const [name, setName] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The name you entered was: ${name}`);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>Enter your name:
+        <input 
+          type="text" 
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+      <input type="submit" />
     </form>
-    <div id="success-message" class="hidden">Email sent successfully!</div>
-</div>
+  )
+}
 
-<script>
-    document.getElementById("email-form").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        // For demonstration purposes, we'll show the success message here
-        document.getElementById("success-message").classList.remove("hidden");
-        setTimeout(function () {
-            document.getElementById("success-message").classList.add("hidden");
-        }, 3000); // Hide the success message after 3 seconds
-    });
-</script>
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<MyForm />);
 </body>
 </html>
 
