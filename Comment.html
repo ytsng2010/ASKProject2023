@@ -127,36 +127,54 @@ height: 40px;
   <!-- React and ReactDOM libraries -->
   <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <title>Review Form</title>
+  <style>
+    /* Some basic CSS for the form and message */
+    form {
+      margin: 20px;
+    }
+    #message {
+      display: none;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
   
-  <!-- Babel compiler (for JSX) -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-import { useState } from "react";
-import ReactDOM from 'react-dom/client';
+  <form id="reviewForm">
+<input type="hidden" name="contact_number">
+        <label>Name:</label><br>
+        <input type="text" name="user_name" placeholder="Your name" required><br>
+        <label>Email:</label><br>
+        <input type="email" name="user_email" placeholder="Your email" required><br>
+      <form id="reviewForm">
+    <label for="review">Leave your review:</label><br>
+    <textarea id="review" name="review" rows="4" cols="50" required></textarea><br>
+    <input type="submit" value="Submit">
+  </form>
 
-function MyForm() {
-  const [name, setName] = useState("");
+  <div id="message"></div>
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert(`The name you entered was: ${name}`);
-  }
+  <script>
+    // JavaScript for handling form submission
+    document.getElementById('reviewForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <label>Enter your name:
-        <input 
-          type="text" 
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
-      <input type="submit" />
-    </form>
-  )
-}
+      // Get the review message
+      const review = document.getElementById('review').value;
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<MyForm />);
+      // Display a thank you message
+      const messageDiv = document.getElementById('message');
+      messageDiv.innerText = `Thanks for your review: "${review}"`;
+      messageDiv.style.display = 'block';
+      
+      // Reset the form after submission
+      this.reset();
+    });
+  </script>
+</body>
+</html>
 </body>
 </html>
 
