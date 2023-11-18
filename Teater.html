@@ -114,8 +114,34 @@ height: 40px;
     </div>
   <div class="navbar">
     <span style="font-size:35px;cursor:pointer;background-color:grey;float:left;" onclick="openNav()">&#9776;</span>
-   <a href="Pengenalan Ahli Projek">Pengenalan Ahli Projek</a>
+   <a href="Pengenalan Ahli Projek.html">Pengenalan Ahli Projek</a>
+   <a href="Comment.html">Komen</a>
     <a href="Theatre.html">Tukar Bahasa</a>
+             <script type="text/javascript">
+   
+    function init() {
+  var lookfor = document.getElementById("q").value; 
+  var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li");
+
+  elementsToSearch.forEach(function (element) {
+    var content = element.innerHTML; 
+    var modifiedContent = content.replace(new RegExp(lookfor, 'gi'), function (match) {
+      return '<span class="highlight">' + match + '</span>';
+    });
+    element.innerHTML = modifiedContent;
+  });
+}
+  </script>
+   <style type="text/css">
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+ <br> <input type="text" id="q" />
+ <button onclick="init()">Search</button>
+  </div>
   </div>
   <div class="main" style="font-size:18px;">
    <marquee style="background-color:red;font-size:25px;" scrolldelay=35 truespeed="truespeed">SELAMAT DATANG MEMPELAJARI SENI BUDAYA MALAYSIA!</marquee>
@@ -171,6 +197,7 @@ height: 40px;
     <div class="card h-100">
       <img src="pictures/AlatMuzik.jpg" class="card-img-top" alt="...">
       <div class="card-body">
+       <a href="Muzik.html">
         <h5 class="card-title">Muzik</h5>
         <p class="card-text">Malaysia mempunyai pelbagai Tradisional Muzik,termasuklah sape,kompang......</p>
       </div>
@@ -184,6 +211,7 @@ height: 40px;
     <div class="card h-100">
       <img src="pictures/Tarian.jpg" class="card-img-top" alt="...">
       <div class="card-body">
+       <a href="Tarian.html">
         <h5 class="card-title">Tarian</h5>
         <p class="card-text">Banyak tradisional Tarian di Malaysia sangat menarik ,seperti...... </p>
       </div>
