@@ -104,19 +104,39 @@ height: 40px;
 </head>
 <div id="mySidenav" class="sidenav" style="text-align:center;">
      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-     <a><h3 style="color:red;">Malaysian Cultural Arts</h3></a>
+     <a><h3 style="color:red;">Malaysian Arts and Cultures</h3></a>
      <a href="index.html"><h3>Home Page</h3></a>
-     <a href="Game.html">Game</a>
-     <a href="Presentation.html">Presentation</a>
+     <a href="Games.html">Games</a>
+     <a href="Performances.html">Performances</a>
      <a href="Food.html">Food</a>
-     <a href="Building.html">Building</a>
+     <a href="Buildings.html">Buildings</a>
      <a href="Clothes.html">Clothes</a>
      </div>
    <div class="navbar">
      <span style="font-size:35px;cursor:pointer;background-color:grey;float:left;" onclick="openNav()">&#9776;</span>
-     <a href="">Video Space</a>
-     <a href="Project Member Introduction">Project Member Introduction</a>
+  <a href="Introduction of Project Members.html">Introduction of Project Members</a>
+     <a href="Comment.html">Comment</a>
      <a href="Tarian.html">Change Language</a>
+       <script type="text/javascript">
+    function init() {
+      var lookfor = document.getElementById("q").value;
+      var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, li");
+
+      elementsToSearch.forEach(function (element) {
+        var content = element.innerHTML;
+        var modifiedContent = content.replace(new RegExp(lookfor, 'gi'), function (match) {
+          return '<span class="highlight">' + match + '</span>';
+        });
+        element.innerHTML = modifiedContent;
+      });
+    }
+  </script>
+  <style type="text/css">
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+  <input type="text" id="q" />
    </div>
    <div class="main" style="font-size:18px;">
     <marquee style="background-color:red;font-size:25px;" scrolldelay=35 truespeed="truespeed">WELCOME TO LEARNING THE ARTS OF MALAYSIAN CULTURE!</marquee>
@@ -167,6 +187,7 @@ height: 40px;
   </article>
   <div class="row row-cols-1 row-cols-md-3 g-4">
    <div class="col">
+     <a href="Music.html">
      <div class="card h-100">
        <img src="pictures/AlatMuzik.jpg" class="card-img-top" alt="...">
        <div class="card-body">
@@ -181,6 +202,7 @@ height: 40px;
    </div>
 <div class="col">
      <div class="card h-100">
+       <a href="Theatre.html">
        <img src="pictures/Teater.jpg" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">Theatre</h5>
