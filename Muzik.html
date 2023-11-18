@@ -115,8 +115,30 @@ height: 40px;
   <div class="navbar">
     <span style="font-size:35px;cursor:pointer;background-color:grey;float:left;" onclick="openNav()">&#9776;</span>
     <a href="">Ruang Video</a>
-    <a href="Pengenalan Ahli Projek">Pengenalan Ahli Projek</a>
-    <a href="English Index.html">Bahasa Inggeris</a>
+    <a href="Pengenalan Ahli Projek.html">Pengenalan Ahli Projek</a>
+    <a href="Music.html">Tukar Bahasa</a>
+    <script type="text/javascript">
+    function init() {
+      var lookfor = document.getElementById("q").value;
+      var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, li");
+
+      elementsToSearch.forEach(function (element) {
+        var content = element.innerHTML;
+        var modifiedContent = content.replace(new RegExp(lookfor, 'gi'), function (match) {
+          return '<span class="highlight">' + match + '</span>';
+        });
+        element.innerHTML = modifiedContent;
+      });
+    }
+  </script>
+  <style type="text/css">
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+ <input type="text" id="q" />
+  <button onclick="init()">Search</button>
+ </div>
   </div>
   <div class="main" style="font-size:18px;">
    <marquee style="background-color:red;font-size:25px;" scrolldelay=35 truespeed="truespeed">SELAMAT DATANG MEMPELAJARI SENI BUDAYA MALAYSIA!</marquee>
@@ -139,7 +161,7 @@ height: 40px;
 <summary><h3>Kompang</h3></a></summary>
  <img src="pictures/Kompang.jpg">
  <li>alat muzik tradisional paling <u>popular</u> dalam kalangan masyarakat Melayu.</li> 
- <li>diperbuat daripada <u>>kulit kambing </u></li>
+ <li>diperbuat daripada <u>kulit kambing </u></li>
 <summary><h3>Beduan</h3></a></summary>
  <img src="pictures/Beduan.jpg">
  <li>persembahan kesenian yang <u>tertua </u>di negeri Perlis.</li> 
@@ -199,7 +221,7 @@ height: 40px;
      <a href="Teater.html">
       <img src="pictures/Teater.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title"style="color:black;>Teater</h5>
+        <h5 class="card-title">Teater</h5>
         <p class="card-text">Malaysia mempunyai banyak teater yang menarik seperti......</p>
       </div>
       <div class="card-footer">
