@@ -105,8 +105,29 @@
     </div>
   <div class="navbar">
     <span style="font-size:35px;cursor:pointer;background-color:grey;float:left;" onclick="openNav()">&#9776;</span>
-    <a href="Pengenalan Ahli Projek">Introduction of Project Members</a>
+    <a href="Introduction of Project Members.html">Introduction of Project Members</a>
+   <a href="Comment.html">Comment</a>
     <a href="Permainan.html">Change Language</a>
+     <script type="text/javascript">
+    function init() {
+      var lookfor = document.getElementById("q").value;
+      var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, li");
+
+      elementsToSearch.forEach(function (element) {
+        var content = element.innerHTML;
+        var modifiedContent = content.replace(new RegExp(lookfor, 'gi'), function (match) {
+          return '<span class="highlight">' + match + '</span>';
+        });
+        element.innerHTML = modifiedContent;
+      });
+    }
+  </script>
+  <style type="text/css">
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+  <input type="text" id="q" />
   </div>
   <div class="main" style="font-size:18px;">
    <marquee style="background-color:red;font-size:25px;" scrolldelay=35 truespeed="truespeed">WELCOME TO LEARN ABOUT MALAYSIA'S ARTS AND CULTURES!</marquee>
