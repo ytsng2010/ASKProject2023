@@ -118,6 +118,31 @@ height: 40px;
         <a href="Comment.html">Komen</a>
 
      <a href="Teater.html">Change Language</a>
+          <script type="text/javascript">
+   
+    function init() {
+  var lookfor = document.getElementById("q").value; // Remove .toLowerCase()
+  var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
+
+  elementsToSearch.forEach(function (element) {
+    var content = element.innerHTML; // Remove .toLowerCase()
+    var modifiedContent = content.replace(new RegExp(lookfor, 'gi'), function (match) {
+      return '<span class="highlight">' + match + '</span>';
+    });
+    element.innerHTML = modifiedContent;
+  });
+}
+  </script>
+   <style type="text/css">
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+ <br> <input type="text" id="q" />
+ <button onclick="init()">Search</button>
+  </div>
    </div>
    <div class="main" style="font-size:18px;">
    <br><br><br> <marquee style="background-color:red;font-size:25px;" scrolldelay=35 truespeed="truespeed">WELCOME TO LEARNING THE ARTS OF MALAYSIAN CULTURE!</marquee>
@@ -215,7 +240,7 @@ the Malays as well. </li>
 </div>
 
 <!-- Button to scroll to top -->
-<button id="scrollToTopBtn" onclick="scrollToTop()">^Tatal ke atas</button>
+<button id="scrollToTopBtn" onclick="scrollToTop()">^Scroll to Top</button>
 
 <script>
     // Show the button when the user scrolls down 300px
