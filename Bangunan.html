@@ -115,12 +115,12 @@ height: 40px;
     <span style="font-size:35px;cursor:pointer;background-color:grey;float:left;" onclick="openNav()">&#9776;</span>
     <a href="Pengenalan Ahli Projek.html">Pengenalan Ahli Projek</a>
    <a href="Komen.html">Komen</a>
-    <a href="Building.html">Tukar Bahasa</a>
+    <a href="Buildings.html">Tukar Bahasa</a>
      <script type="text/javascript">
    
     function init() {
   var lookfor = document.getElementById("q").value; // Remove .toLowerCase()
-  var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
+  var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li");
 
   elementsToSearch.forEach(function (element) {
     var content = element.innerHTML; // Remove .toLowerCase()
@@ -167,4 +167,48 @@ height: 40px;
   </div>
   </div>
 </body>
+ <style>
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+   <body>
+<div style="height: 50px;">
+</div>
+
+<!-- Button to scroll to top -->
+<button id="scrollToTopBtn" onclick="scrollToTop()">^Takal ke Atas</button>
+
+<script>
+    // Show the button when the user scrolls down 300px
+    window.onscroll = function () {
+        showScrollButton();
+    };
+
+    function showScrollButton() {
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    }
+
+    // Scroll to the top when the button is clicked
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+</html>
 </html>
