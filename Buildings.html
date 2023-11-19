@@ -120,7 +120,7 @@ height: 40px;
    
      function init() {
    var lookfor = document.getElementById("q").value; // Remove .toLowerCase()
-   var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
+   var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li");
 
    elementsToSearch.forEach(function (element) {
      var content = element.innerHTML; // Remove .toLowerCase()
