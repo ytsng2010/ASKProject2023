@@ -150,7 +150,106 @@
      <br>
      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEach race and religion represents a unique culture. Those cultures also represents a special type of art that has been passed down through generations. Let's know more about the arts and cultures
      of Malaysia together in this website.
-     </p> 
+     </p>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    .carousel-caption {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: initial;
+      z-index: 10;
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      padding: 0 70px;
+    }
+
+    .carousel-inner {
+      height: 100vh;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="Games.html" data-slide-to="0" class="active"></li>
+    <li data-target="Performances.html" data-slide-to="1"></li>
+    <li data-target="Food.html" data-slide-to="2"></li>
+    <li data-target="Buildings.html" data-slide-to="3"></li>
+    <li data-target="Clothes.html" data-slide-to="4"></li>
+  </ol>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+     <a href="Games.html">
+      <img src="pictures/Permainan.png" alt="Slide 1">
+      <div class="carousel-caption">
+        <h3>Permainan</h3>
+        <p>Malaysia has many traditional games such as......</p>
+      </div>
+    </div>
+
+ <div class="carousel-item">
+  <a href="Performances.html">
+      <img src="pictures/Persembahan.png" alt="Slide 2">
+      <div class="carousel-caption">
+        <h3>Persembahan</h3>
+        <p>Malaysia has many traditional performances such as......</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+     <a href="Food.html">
+      <img src="pictures/Makanan.png" alt="Slide 3">
+      <div class="carousel-caption">
+        <h3>Food</h3>
+        <p>Malaysia has many delicious foods such as......</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+     <a href="Buildings.html">
+      <img src="pictures/Bangunan.jpg" alt="Slide 4">
+      <div class="carousel-caption">
+        <h3>Buildings</h3>
+        <p>Malaysia has many building such as......</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+     <a href="Clothes.html">
+      <img src="pictures/samfoo.jfif" alt="Slide 5">
+      <div class="carousel-caption">
+        <h3>Clothes</h3>
+        <p>Malaysia has many traditional cloth such as......</p>
+      </div>
+    </div>
+  </div>
+
+  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 2000
+    })
+  });
+</script>
 </div>
 </body>
  <style>
@@ -167,6 +266,7 @@
             cursor: pointer;
         }
     </style>
+ 
 </head>
    <body>
 <div style="height: 50px;">
