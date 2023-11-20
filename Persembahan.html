@@ -136,6 +136,34 @@
  </div>
   <div class="main" style="font-size:18px;">
    <marquee style="background-color:red;font-size:25px;" scrolldelay=35 truespeed="truespeed">SELAMAT DATANG MEMPELAJARI SENI BUDAYA MALAYSIA!</marquee>
+     <style>
+    /* Add some basic styling */
+    img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    /* Add a class to scale the image when clicked */
+    .enlarged {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Add an image with an ID for easy selection -->
+<img id="enlargeImage" src="pictures/favicon.png" alt="Enlargable Image" onclick="enlargeImage()">
+
+<script>
+  // JavaScript function to handle image enlargement
+  function enlargeImage() {
+    // Select the image element
+    var image = document.getElementById("enlargeImage");
+
+    // Toggle the 'enlarged' class to scale the image
+    image.classList.toggle("enlarged");
+  }
+</script>
 <h1 style="background-color:Orange;text-align:center;">PERSEMBAHAN</h1>
 <h3 style="background-color:Gold;text-align:center;"> Seni Persembahan adalah merangkumi persembahan yang dipentaskan di dalam kategori Seni Tari, Seni Teater dan Seni Muzik yang turut melibatkan Seni Suara atau Nyanyian. Seni Persembahan yang dipaparkan adalah berbentuk kesenian tradisional yang diwariskan daripada generasi terdahulu.</h3>
 <div class="row row-cols-1 row-cols-md-3 g-4">
