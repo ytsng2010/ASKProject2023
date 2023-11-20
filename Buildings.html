@@ -143,7 +143,35 @@ height: 40px;
   <button onclick="init()">Search</button>
    <div class="main" style="font-size:18px;">
 <marquee style="background-color:red;font-size:25px;" scrolldelay=35 truespeed="truespeed">WELCOME TO LEARNING THE ARTS OF MALAYSIAN CULTURE!</marquee>
-    <h1>Building </h1>
+     <style>
+    /* Add some basic styling */
+    img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    /* Add a class to scale the image when clicked */
+    .enlarged {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Add an image with an ID for easy selection -->
+<img id="enlargeImage" src="pictures/favicon.png" alt="Enlargable Image" onclick="enlargeImage()">
+
+<script>
+  // JavaScript function to handle image enlargement
+  function enlargeImage() {
+    // Select the image element
+    var image = document.getElementById("enlargeImage");
+
+    // Toggle the 'enlarged' class to scale the image
+    image.classList.toggle("enlarged");
+  }
+</script>
+     <h1>Building </h1>
     <h2>Atkinson Clock Tower</h2>
     <iframe src="https://www.google.com/maps/embed?pb=!4v1700383092889!6m8!1m7!1sD95Drdbp2JZJOB9fBE4blA!2m2!1d5.982259538492638!2d116.0770496172072!3f113.30553094 988834!4f14.264356128335152!5f1. 232025438655441" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <li> built to commemorate Jesselton's first District Officer, Francis George Atkinson, who died after being attacked by malaria when he was only 28 years old.</li>
