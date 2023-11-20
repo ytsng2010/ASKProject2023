@@ -144,7 +144,34 @@ height: 40px;
   </div>
   <div class="main" style="font-size:18px;">
 <marquee style="background-color:red;font-size:25px;" scrolldelay=35 truespeed="truespeed">SELAMAT DATANG MEMPELAJARI SENI BUDAYA MALAYSIA!</marquee>
+  <style>
+    /* Add some basic styling */
+    img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
 
+    /* Add a class to scale the image when clicked */
+    .enlarged {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Add an image with an ID for easy selection -->
+<img id="enlargeImage" src="android-chrome-192x192.png" alt="Enlargable Image" onclick="enlargeImage()">
+
+<script>
+  // JavaScript function to handle image enlargement
+  function enlargeImage() {
+    // Select the image element
+    var image = document.getElementById("enlargeImage");
+
+    // Toggle the 'enlarged' class to scale the image
+    image.classList.toggle("enlarged");
+  }
+</script>
    <h2 style="color:red;text-align:center;">Seni Budaya Malaysia</h2>
    <p style="padding-left: 15px;">Malaysia ialah sebuah negara berbilang kaum yang hidup dalam keamanan. Tiga kaum yang utama di Malaysia ialah Melayu,
     Cina dan India. 
