@@ -133,7 +133,35 @@
  </div>
   </div>
   <div class="main" style="font-size:25px;">
-   <marquee style="background-color:red;" scrolldelay=30 truespeed="truespeed">WELCOME TO LEARN ABOUT MALAYSIA'S ARTS AND CULTURES!</marquee>  </div>
+   <marquee style="background-color:red;" scrolldelay=30 truespeed="truespeed">WELCOME TO LEARN ABOUT MALAYSIA'S ARTS AND CULTURES!</marquee>
+    <style>
+    /* Add some basic styling */
+    img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    /* Add a class to scale the image when clicked */
+    .enlarged {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Add an image with an ID for easy selection -->
+<img id="enlargeImage" src="pictures/favicon.png" alt="Enlargable Image" onclick="enlargeImage()">
+
+<script>
+  // JavaScript function to handle image enlargement
+  function enlargeImage() {
+    // Select the image element
+    var image = document.getElementById("enlargeImage");
+
+    // Toggle the 'enlarged' class to scale the image
+    image.classList.toggle("enlarged");
+  }
+</script></div>
 <h1 style="background-color:Orange;text-align:center;">PERFORMANCES</h1>
 <h3 style="background-color:Gold;text-align:center;"> Performance Art includes performances staged in the categories of Dance Art, Theater Art and Music Art that also involve Voice Art or Singing. The performance art displayed is in the form of traditional art inherited from previous generations.</h3>
 <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -201,7 +229,7 @@
 </div>
 
 <!-- Button to scroll to top -->
-<button id="scrollToTopBtn" onclick="scrollToTop()">^Tatal ke atas</button>
+<button id="scrollToTopBtn" onclick="scrollToTop()">^Back to Top</button>
 
 <script>
     // Show the button when the user scrolls down 300px
