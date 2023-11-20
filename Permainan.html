@@ -127,11 +127,39 @@
     }
   </style>
  <br><input type="text" id="q" />
-  <button onclick="init()">Search</button>
+  <button onclick="init()">Cari</button>
  </div>
   </div>
   <div class="main" style="font-size:18px;">
    <marquee style="background-color:red;font-size:25px;" scrolldelay=35 truespeed="truespeed">SELAMAT DATANG MEMPELAJARI SENI BUDAYA MALAYSIA!</marquee>
+     <style>
+    /* Add some basic styling */
+    img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    /* Add a class to scale the image when clicked */
+    .enlarged {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Add an image with an ID for easy selection -->
+<img id="enlargeImage" src="pictures/favicon.png" alt="Enlargable Image" onclick="enlargeImage()">
+
+<script>
+  // JavaScript function to handle image enlargement
+  function enlargeImage() {
+    // Select the image element
+    var image = document.getElementById("enlargeImage");
+
+    // Toggle the 'enlarged' class to scale the image
+    image.classList.toggle("enlarged");
+  }
+</script>
      <h2 style="color:red;text-align:center;">Malaysia's Tradisional Clothes</h2>
    <ul>
  <h3>1. Congkak</h3>
