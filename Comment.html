@@ -211,20 +211,56 @@ height: 40px;
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
    <h1 id="formtitle" class="animate__animated animate__jackInTheBox">Comment!</h1>
+<!-- Comment Form -->
+<form id="commentForm">
+            <label for="name">Name:</label>
 
-  <form id="reviewForm">
-<input type="hidden" name="contact_number">
-        <label>Name:</label><br>
-        <input type="text" name="user_name" placeholder="Your name" required><br>
-        <label>Email:</label><br>
-        <input type="email" name="user_email" placeholder="Your email" required><br>
-      <form id="reviewForm">
-    <label for="review">Leave your review:</label><br>
-    <textarea id="review" name="review" rows="4" cols="50" required></textarea><br>
-    <input type="submit" value="Submit">
-  </form>
+  <input type="text" id="name" placeholder="Name" required><br>
+    <br>            <label for="name">Email:</label>
+<input type="email" id="email" placeholder="Email" required><br>
+            <label for="name">Comment</label>
 
-  <div id="message"></div>
+    <br><textarea id="message" placeholder="Your Comment" required></textarea>
+    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Card to Display Comments -->
+<div id="commentCard" class="card" style="display: none;">
+    <div class="card-body">
+        <h5 class="card-title" id="commenterName"></h5>
+        <p class="card-text" id="commentMessage"></p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('commentForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        // Retrieve form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        // Perform necessary validations
+
+        // Send AJAX request to backend to process and send email (using fetch or XMLHttpRequest)
+        // Show confirmation message
+        showConfirmation();
+        // Display comment in the card
+        displayComment(name, message);
+    });
+
+    function showConfirmation() {
+        // Display a confirmation popup
+        alert("Thanks for your review!");
+    }
+
+    function displayComment(name, message) {
+        // Update the comment card with the submitted comment details
+        document.getElementById('commenterName').textContent = name;
+        document.getElementById('commentMessage').textContent = message;
+        document.getElementById('commentCard').style.display = 'block';
+    }
+</script>
 
   <script>
     // JavaScript for handling form submission
