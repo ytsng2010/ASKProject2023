@@ -189,38 +189,17 @@ height: 40px;
     </a>
   </div>
   
-  <div id="root"></div>
-
-  <!-- React and ReactDOM libraries -->
-  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-  <title>Review Form</title>
-  <style>
-    /* Some basic CSS for the form and message */
-    form {
-      margin: 20px;
-    }
-    #message {
-      display: none;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-   <h1 id="formtitle" class="animate__animated animate__jackInTheBox">Comment!</h1>
 <!-- Comment Form -->
 <form id="commentForm">
             <label for="name">Name:</label>
 
-  <input type="text" id="name" placeholder="Name" required><br>
-    <br>            <label for="name">Email:</label>
-<input type="email" id="email" placeholder="Email" required><br>
-            <label for="name">Comment</label>
+    <input type="text" id="name" placeholder="Name" required>
+                <br><br><label for="name">E-mail:</label>
 
-    <br><textarea id="message" placeholder="Your Comment" required></textarea>
+    <input type="email" id="email" placeholder="Email" required>
+                <br><br><label for="name">Name:</label>
+
+    <textarea id="message" placeholder="Your Comment" required></textarea>
     <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
     <button type="submit">Submit</button>
 </form>
@@ -262,23 +241,6 @@ height: 40px;
     }
 </script>
 
-  <script>
-    // JavaScript for handling form submission
-    document.getElementById('reviewForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent default form submission
-
-      // Get the review message
-      const review = document.getElementById('review').value;
-
-      // Display a thank you message
-      const messageDiv = document.getElementById('message');
-      messageDiv.innerText = `Thanks for your review: "${review}"`;
-      messageDiv.style.display = 'block';
-      
-      // Reset the form after submission
-      this.reset();
-    });
-  </script>
 </body>
 </html>
 
