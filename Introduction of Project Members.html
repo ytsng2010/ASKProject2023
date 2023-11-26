@@ -147,6 +147,31 @@ body {
   transform: rotateY(180deg);
 }
 </style>
+ <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
 </head>
 <div id="mySidenav" class="sidenav" style="text-align:center;">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
