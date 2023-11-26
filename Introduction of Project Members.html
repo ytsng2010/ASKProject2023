@@ -102,51 +102,51 @@ height: 40px;
 }
 
 </style>
- <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+  <style>
+        /* Container for the flip cards */
+        .flip-card-container {
+            display: flex;
+            flex-wrap: nowrap; /* Ensures the cards stay in a single row */
+            gap: 20px; /* Adjust the gap between cards */
+        }
 
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
-}
+        /* Flip card styles */
+        .flip-card {
+            background-color: #f1f1f1;
+            width: 200px; /* Adjust the width of each card */
+            height: 300px; /* Adjust the height of each card */
+            perspective: 1000px;
+            transition: transform 0.5s;
+        }
 
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
+        .flip-card:hover {
+            transform: rotateY(180deg);
+        }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
+        /* Flip card inner content styles */
+        .flip-card-inner {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
 
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
 
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
+        .flip-card-front,
+        .flip-card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+        }
 
-.flip-card-back {
-  background-color: #2980b9;
-  color: white;
-  transform: rotateY(180deg);
-}
-</style>
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
  <style>
 * {
   box-sizing: border-box;
