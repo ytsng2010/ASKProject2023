@@ -23,7 +23,21 @@
       document.getElementById("mySidenav").style.width = "0";
     }
   </script>
+<style>
+.divider {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
 
+.divider::before, .divider::after {
+  flex: 1;
+  content: '';
+  padding: 3px;
+  background-color: red;
+  margin: 5px;
+}
+</style>
 <style>
  .sidenav {
   height: 100%;
@@ -172,7 +186,7 @@ height: 40px;
     image.classList.toggle("enlarged");
   }
 </script>
-   <h2 style="color:red;text-align:center;">Seni Budaya Malaysia</h2>
+   <h2 style="color:red;text-align:center;"><div class="divider">Seni Budaya Malaysia</h2></div>
    <p style="padding-left: 15px;">Malaysia ialah sebuah negara berbilang kaum yang hidup dalam keamanan. Tiga kaum yang utama di Malaysia ialah Melayu,
     Cina dan India. 
     <br>
