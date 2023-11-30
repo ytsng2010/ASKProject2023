@@ -235,7 +235,17 @@ height: 40px;
 
 <form id="commentForm">
     <!-- Add the star rating within the comment form -->
-    <div class="rating">
+
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" placeholder="Name" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" placeholder="Email" required><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" placeholder="Your Comment" required></textarea><br>
+ <p>Star Rating:</p>
+  <div class="rating">
         <input type="radio" id="star5" name="rating" value="5" />
         <label for="star5">&#9733;</label>
         <input type="radio" id="star4" name="rating" value="4" />
@@ -247,15 +257,6 @@ height: 40px;
         <input type="radio" id="star1" name="rating" value="1" />
         <label for="star1">&#9733;</label>
     </div>
-
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" placeholder="Name" required><br><br>
-
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" placeholder="Email" required><br><br>
-
-    <label for="message">Message:</label><br>
-    <textarea id="message" placeholder="Your Comment" required></textarea><br><br>
 
     <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div><br>
 
