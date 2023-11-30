@@ -170,6 +170,35 @@ height: 40px;
       transform: scale(1.5);
     }
   </style>
+     <style>
+        /* Add the CSS styles here */
+        .rating {
+            display: inline-block;
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            display: inline-block;
+            padding: 5px;
+            font-size: 24px;
+            color: #ddd;
+            cursor: pointer;
+        }
+
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: orange;
+        }
+
+        .rating input:checked ~ label {
+            color: orange;
+        }
+    </style>
 </head>
 <body>
 
@@ -191,18 +220,40 @@ height: 40px;
   
 <!-- Comment Form -->
 <form id="commentForm">
-            <label for="name">Name:</label>
+            <label for="name">Name:</label><br>
 
     <input type="text" id="name" placeholder="Name" required>
-                <br><br><label for="name">E-mail:</label>
+                <br><br><label for="name">E-mail:</label><br>
 
     <input type="email" id="email" placeholder="Email" required>
-                <br><br><label for="name">Name:</label>
+                <br><br><label for="name">Name:</label><br>
+ <div class="rating">
+    <input type="radio" id="star5" name="rating" value="5" />
+    <label for="star5">&#9733;</label>
+    <input type="radio" id="star4" name="rating" value="4" />
+    <label for="star4">&#9733;</label>
+    <input type="radio" id="star3" name="rating" value="3" />
+    <label for="star3">&#9733;</label>
+    <input type="radio" id="star2" name="rating" value="2" />
+    <label for="star2">&#9733;</label>
+    <input type="radio" id="star1" name="rating" value="1" />
+    <label for="star1">&#9733;</label>
+</div>
+
 
     <textarea id="message" placeholder="Your Comment" required></textarea>
     <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
     <button type="submit">Submit</button>
 </form>
+<script>
+    const ratingInputs = document.querySelectorAll('.rating input');
+
+    ratingInputs.forEach(input => {
+        input.addEventListener('change', () => {
+            console.log('Selected rating:', input.value);
+        });
+    });
+</script>
 
 <!-- Card to Display Comments -->
 <div id="commentCard" class="card" style="display: none;">
