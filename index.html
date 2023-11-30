@@ -151,6 +151,20 @@ height: 40px;
       background-color: yellow;
     }
   </style>
+   <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            alert("Latitude: " + position.coords.latitude +
+                "\nLongitude: " + position.coords.longitude);
+        }
+    </script>
 </head>
 <body>
  <br> <input type="text" id="q" />
@@ -171,7 +185,7 @@ height: 40px;
     }
   </style>
 </head>
-<body>
+<body onload="getLocation()">>
 
 <!-- Add an image with an ID for easy selection -->
 <img id="enlargeImage" src="pictures/favicon.png" alt="Enlargable Image" onclick="enlargeImage()">
