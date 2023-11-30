@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -63,7 +62,7 @@
     body {
         font-family: "Lato", sans-serif;
         margin: 0;
-        background: linear-gradient(55deg, rgba(180, 233, 255, 1), rgba(255, 160, 122, 0.8), rgba(216, 220, 255, 1));
+        background: linear-gradient(55deg, rgba(180, 233, 255, 1), rgba(255, 160, 122, 0.5), rgba(216, 220, 255, 1));
     }
 
     .navbar {
@@ -94,22 +93,6 @@
       margin-top: 30px;
       line-height: 1.15;
     }
-
-     .round-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #3498db;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 20px; /* Adjust the value to control the roundness */
-      transition: background-color 0.3s ease;
-    }
-
-    /* Hover effect */
-    .round-button:hover {
-      background-color: #2980b9; /* Change color on hover */
-    }
- 
    menu-icon {
 display: hidden;
 width: 40px;
@@ -118,7 +101,39 @@ height: 40px;
 }
 
 </style>
+   
+    <style>
+        /* Your existing styles */
+        /* Add the CSS styles for the star rating here */
+        .rating {
+            display: inline-block;
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            display: inline-block;
+            padding: 5px;
+            font-size: 24px;
+            color: #ddd;
+            cursor: pointer;
+        }
+
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: orange;
+        }
+
+        .rating input:checked ~ label {
+            color: orange;
+        }
+    </style>
 </head>
+<body>
 <div id="mySidenav" class="sidenav" style="text-align:center;">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a><h3 style="color:red;">Malaysia's Art and Cultures</h3></a>
@@ -217,53 +232,47 @@ height: 40px;
 </script>
     </a>
   </div>
-  
-<!-- Comment Form -->
+
 <form id="commentForm">
-            <label for="name">Name:</label><br>
+    <!-- Add the star rating within the comment form -->
+    <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5" />
+        <label for="star5">&#9733;</label>
+        <input type="radio" id="star4" name="rating" value="4" />
+        <label for="star4">&#9733;</label>
+        <input type="radio" id="star3" name="rating" value="3" />
+        <label for="star3">&#9733;</label>
+        <input type="radio" id="star2" name="rating" value="2" />
+        <label for="star2">&#9733;</label>
+        <input type="radio" id="star1" name="rating" value="1" />
+        <label for="star1">&#9733;</label>
+    </div>
 
-    <input type="text" id="name" placeholder="Name" required>
-                <br><br><label for="name">E-mail:</label><br>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" placeholder="Name" required><br><br>
 
-    <input type="email" id="email" placeholder="Email" required>
-                <br><br><label for="name">Name:</label><br>
- <div class="rating">
-    <input type="radio" id="star5" name="rating" value="5" />
-    <label for="star5">&#9733;</label>
-    <input type="radio" id="star4" name="rating" value="4" />
-    <label for="star4">&#9733;</label>
-    <input type="radio" id="star3" name="rating" value="3" />
-    <label for="star3">&#9733;</label>
-    <input type="radio" id="star2" name="rating" value="2" />
-    <label for="star2">&#9733;</label>
-    <input type="radio" id="star1" name="rating" value="1" />
-    <label for="star1">&#9733;</label>
-</div>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" placeholder="Email" required><br><br>
 
+    <label for="message">Message:</label><br>
+    <textarea id="message" placeholder="Your Comment" required></textarea><br><br>
 
-    <textarea id="message" placeholder="Your Comment" required></textarea>
-    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div><br>
+
     <button type="submit">Submit</button>
 </form>
+
 <script>
+    // Get all the rating inputs
     const ratingInputs = document.querySelectorAll('.rating input');
 
+    // Add an event listener to each input to track the selected rating
     ratingInputs.forEach(input => {
         input.addEventListener('change', () => {
             console.log('Selected rating:', input.value);
         });
     });
-</script>
 
-<!-- Card to Display Comments -->
-<div id="commentCard" class="card" style="display: none;">
-    <div class="card-body">
-        <h5 class="card-title" id="commenterName"></h5>
-        <p class="card-text" id="commentMessage"></p>
-    </div>
-</div>
-
-<script>
     document.getElementById('commentForm').addEventListener('submit', function (e) {
         e.preventDefault();
         // Retrieve form data
@@ -275,25 +284,17 @@ height: 40px;
         // Send AJAX request to backend to process and send email (using fetch or XMLHttpRequest)
         // Show confirmation message
         showConfirmation();
-        // Display comment in the card
-        displayComment(name, message);
     });
 
     function showConfirmation() {
         // Display a confirmation popup
         alert("Thanks for your review!");
     }
-
-    function displayComment(name, message) {
-        // Update the comment card with the submitted comment details
-        document.getElementById('commenterName').textContent = name;
-        document.getElementById('commentMessage').textContent = message;
-        document.getElementById('commentCard').style.display = 'block';
-    }
 </script>
 
 </body>
 </html>
+
 
 
 
