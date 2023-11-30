@@ -91,8 +91,23 @@
       line-height: 1.15;
     }
 </style>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            alert("Latitude: " + position.coords.latitude +
+                "\nLongitude: " + position.coords.longitude);
+        }
+    </script>
 </head>
-<body>
+<body onload="getLocation()">
+
 <div id="mySidenav" class="sidenav" style="text-align:center;">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a><h3 style="color:red;">Malaysia's Arts and Cultures</h3></a>
