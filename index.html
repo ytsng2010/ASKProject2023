@@ -174,25 +174,44 @@ height: 40px;
    <a href="Komen.html">Komen</a>
     <a href="English Index.html">Tukar Bahasa</a>
      <script type="text/javascript">
-   
-    function init() {
-  var lookfor = document.getElementById("q").value; // Remove .toLowerCase()
-  var elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
+    let currentHighlight = 0;
 
-  elementsToSearch.forEach(function (element) {
-    var content = element.innerHTML; // Remove .toLowerCase()
-    var modifiedContent = content.replace(new RegExp(lookfor, 'gi'), function (match) {
-      return '<span class="highlight">' + match + '</span>';
-    });
-    element.innerHTML = modifiedContent;
-  });
-}
-  </script>
- <style type="text/css">
-    .highlight {
-      background-color: yellow;
+    function init() {
+      const lookFor = document.getElementById("q").value;
+      const elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li, title");
+      const elementsArray = Array.from(elementsToSearch);
+
+      let found = false;
+
+      for (let i = currentHighlight + 1; i < elementsArray.length; i++) {
+        const content = elementsArray[i].innerHTML;
+        const index = content.toLowerCase().indexOf(lookFor.toLowerCase());
+        
+        if (index !== -1) {
+          found = true;
+          const modifiedContent = content.substring(0, index) +
+            '<span class="highlight">' + content.substring(index, index + lookFor.length) + '</span>' +
+            content.substring(index + lookFor.length);
+          elementsArray[i].innerHTML = modifiedContent;
+
+          // Scroll to the found element
+          elementsArray[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+          currentHighlight = i;
+          break;
+        }
+      }
+
+      if (!found) {
+        alert("No more matches found.");
+        currentHighlight = 0; // Reset search
+      }
     }
-  </style>
+  </script>
+
+  <input type="text" id="q" />
+  <button onclick="init()">Cari</button>
+  
    <script>
         function getLocation() {
             if (navigator.geolocation) {
@@ -213,8 +232,7 @@ height: 40px;
     <div class="popup" id="popup">
      <a href="https://www.airpaz.com/en/airlines/AK-AirAsia" target="#">
         <img src="pictures/Airasia.png" alt="Advertisement Image"></a>
-        <button onclick="closePopup()">Close</button>
-    </div>
+       
 </div>
 
 <script>
