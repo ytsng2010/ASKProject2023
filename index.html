@@ -173,11 +173,42 @@ height: 40px;
     <a href="Pengenalan Ahli Projek.html">Pengenalan Ahli Projek</a>
    <a href="Komen.html">Komen</a>
     <a href="English Index.html">Tukar Bahasa</a>
-     <script type="text/javascript">
+     <input type="text" id="q">
+    <button onclick="init()">Search</button>
+     <!-- Popup Ad -->
+  <div class="overlay" id="overlay">
+    <div class="popup" id="popup">
+      <a href="https://www.airpaz.com/en/airlines/AK-AirAsia" target="#">
+        <img src="pictures/Airasia.png" alt="Advertisement Image">
+      </a>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="main" style="font-size: 18px;">
+    <!-- Search bar -->
+  
+
+   
+
+  <!-- JavaScript for Popup -->
+  <script>
+    function closePopup() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+
+    setTimeout(function() {
+      document.getElementById('overlay').style.display = 'flex';
+    }, 5000); // Show the ad after 5 seconds
+  </script>
+
+  <!-- JavaScript for Search Functionality -->
+  <script type="text/javascript">
     let currentHighlight = 0;
 
     function init() {
-      const lookFor = document.getElementById("q").value;
+      const lookFor = document.getElementById("q").value.toLowerCase();
       const elementsToSearch = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li, title");
       const elementsArray = Array.from(elementsToSearch);
 
@@ -208,9 +239,6 @@ height: 40px;
       }
     }
   </script>
-
-  <input type="text" id="q" />
-  <button onclick="init()">Cari</button></div>
   
    <script>
         function getLocation() {
@@ -226,27 +254,7 @@ height: 40px;
                 "\nLongitude: " + position.coords.longitude);
         }
     </script>
-</head>
-<body>
-<div class="overlay" id="overlay">
-    <div class="popup" id="popup">
-     <a href="https://www.airpaz.com/en/airlines/AK-AirAsia" target="#">
-        <img src="pictures/Airasia.png" alt="Advertisement Image"></a>
-       
-</div>
 
-<script>
-    function closePopup() {
-        document.getElementById('overlay').style.display = 'none';
-    }
-
-    setTimeout(function() {
-        document.getElementById('overlay').style.display = 'flex';
-    }, 5000); // Show the ad after 5 seconds
-</script>
- <br> <input type="text" id="q" />
- <button onclick="init()">Cari</button>
-  </div>
   <div class="main" style="font-size:18px;">
 <marquee style="background-color:red;font-size:25px;" scrolldelay=35 truespeed="truespeed">SELAMAT DATANG MEMPELAJARI SENI BUDAYA MALAYSIA!</marquee>
   <style>
